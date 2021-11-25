@@ -12,7 +12,7 @@ df_sum = pd.DataFrame()
 df_preis = pd.read_excel('df_preis.xlsx')
 df_preis = df_preis.drop('Unnamed: 0', axis=1)
 
-data = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm',  sheet_name=None, header=0)
+data = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm',  sheet_name=None, header=0)
 col1, col2, col3 =st.beta_columns(3)
 with col1:
 
@@ -37,7 +37,7 @@ with col1:
         if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
             print(i)
             counter = counter+1
-            w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+            w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
 
             w_matr['OZ'] = w_matr['OZ'].astype(str)
 
@@ -98,7 +98,7 @@ with col2:
         if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
             print(i)
             counter = counter+1
-            w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+            w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)            
             w_matr['OZ'] = w_matr['OZ'].astype(str)
             w_matr['OZ'] = w_matr['OZ'].str.replace('.', '')
             w_matr['OZ'] = w_matr['OZ'].astype(float)
@@ -144,7 +144,7 @@ with col3:
         if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
             print(i)
             counter = counter+1
-            w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+            w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)            
             w_matr['OZ'] = w_matr['OZ'].astype(str)
             w_matr['OZ'] = w_matr['OZ'].str.replace('.', '')
             w_matr['OZ'] = w_matr['OZ'].astype(float)
@@ -172,7 +172,7 @@ for i in list(data.keys())[1:]:
     if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
         print(i)
         counter = counter+1
-        w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+        w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)            
         w_matr['OZ'] = w_matr['OZ'].astype(str)
         w_matr['OZ'] = w_matr['OZ'].str.replace('.', '')
         w_matr['OZ'] = w_matr['OZ'].astype(float)
@@ -207,7 +207,7 @@ with col2:
     for i in list(data.keys())[1:]:
         if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
             counter = counter+1
-            w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+            w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)            
 
             w_matr['OZ'] = w_matr['OZ'].astype(str)
 
@@ -272,7 +272,7 @@ st.table(df_sum)
 writer = pd.ExcelWriter('wertungsmatrix_blocks.xlsx', engine='xlsxwriter')
 for i in list(data.keys())[1:]:
     if i in ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5']:
-        w_matr = pd.read_excel(r'D:\Users\BKU\EugenEGabriel\Deutsche Bahn\Datenanalyse I.SPP - Dokumente\07 Analysen\210914-1 Wertungsmatrix HFT Beschaffung\input\app\0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)
+        w_matr = pd.read_excel('0.2-Wertungsmatrix 21FEA52724 RV FT EUGEN Bieter VR.xlsm', sheet_name =i, header=0)            
 
         w_matr['OZ'] = w_matr['OZ'].astype(str)
 
